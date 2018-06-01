@@ -1,1 +1,6 @@
+Hello/.vs/
+Backup/
+packages/*
 *.exe
+bin/
+obj/
