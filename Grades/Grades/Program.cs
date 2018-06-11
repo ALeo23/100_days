@@ -13,7 +13,6 @@ namespace Grades
         {
             IGradeTracker book = CreateGradeBook();
 
-            //GetBookName(book);
             AddGrades(book);
             SaveGrades(book);
             WriteResults(book);
@@ -27,7 +26,12 @@ namespace Grades
         private static void WriteResults(IGradeTracker book)
         {
             GradeStatistics stats = book.ComputeStatistics();
-            Console.WriteLine(book.Name);
+
+            foreach (float grade in book)
+            {
+                Console.WriteLine(grade);
+            }
+
             WriteResult("Highest Grade", stats.HighestGrade);
             WriteResult("Average Grade", stats.AverageGrade);
             WriteResult("Lowest Grade", stats.LowestGrade);
